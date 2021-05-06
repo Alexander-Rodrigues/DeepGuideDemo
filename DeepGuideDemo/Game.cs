@@ -79,7 +79,7 @@ namespace DeepGuideDemo
                 {
                     groupBox1.Text = "Game Over";
                     groupBox2.Visible = true;
-                    
+
                     richTextBox1.Text = String.Format("You got {0} out of {1} rounds right{2}\n", correct, rounds, (correct == rounds) ? "!" : ".");
                     richTextBox1.Text += String.Format("Your Up/Down accuracy was {0}%\n", correctDU*100 / rounds);
                     richTextBox1.Text += String.Format("Your Left/Right accuracy was {0}%\n", correctLR*100 / rounds);
@@ -175,6 +175,26 @@ namespace DeepGuideDemo
 
             // Return the hexadecimal string.
             return sBuilder.ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            groupBox2.Visible = debug;
+            round = 0;
+
+            loc = gen.Generate();
+            if (debug) richTextBox1.Text = String.Format("nLeftRight:{0} DownUp:{1}", loc.X, loc.Y);
+
+            correctLR = 0;
+            correctDU = 0;
+            correct = 0;
+
+            groupBox1.Text = "Round " + (round + 1);
+
+            steamAudio.ogCreate(loc.X, loc.Y, loc.Z);
+            steamAudio.play();
+
         }
     }
 }
