@@ -45,9 +45,10 @@ namespace DeepGuideDemo
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBoxDebug = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.listBoxDebug = new System.Windows.Forms.ListBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.button1 = new System.Windows.Forms.Button();
+            this.generatorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -58,7 +59,8 @@ namespace DeepGuideDemo
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.settingsToolStripMenuItem,
-            this.helpToolStripMenuItem1});
+            this.helpToolStripMenuItem1,
+            this.generatorToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(446, 24);
@@ -78,14 +80,14 @@ namespace DeepGuideDemo
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.editToolStripMenuItem.Text = "Edit";
             this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
             // testToolStripMenuItem
             // 
             this.testToolStripMenuItem.Name = "testToolStripMenuItem";
-            this.testToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.testToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.testToolStripMenuItem.Text = "Test [WIP]";
             this.testToolStripMenuItem.Click += new System.EventHandler(this.testToolStripMenuItem_Click);
             // 
@@ -93,7 +95,7 @@ namespace DeepGuideDemo
             // 
             this.debugToolStripMenuItem.CheckOnClick = true;
             this.debugToolStripMenuItem.Name = "debugToolStripMenuItem";
-            this.debugToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.debugToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.debugToolStripMenuItem.Text = "Debug";
             this.debugToolStripMenuItem.Click += new System.EventHandler(this.debugToolStripMenuItem_Click);
             // 
@@ -109,14 +111,14 @@ namespace DeepGuideDemo
             // howToPlayToolStripMenuItem
             // 
             this.howToPlayToolStripMenuItem.Name = "howToPlayToolStripMenuItem";
-            this.howToPlayToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.howToPlayToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.howToPlayToolStripMenuItem.Text = "How to play";
             this.howToPlayToolStripMenuItem.Click += new System.EventHandler(this.howToPlayToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem1
             // 
             this.aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
-            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(138, 22);
             this.aboutToolStripMenuItem1.Text = "About";
             this.aboutToolStripMenuItem1.Click += new System.EventHandler(this.aboutToolStripMenuItem1_Click);
             // 
@@ -207,15 +209,6 @@ namespace DeepGuideDemo
             this.groupBoxDebug.TabStop = false;
             this.groupBoxDebug.Text = "Debug";
             // 
-            // listBoxDebug
-            // 
-            this.listBoxDebug.FormattingEnabled = true;
-            this.listBoxDebug.Location = new System.Drawing.Point(6, 22);
-            this.listBoxDebug.Name = "listBoxDebug";
-            this.listBoxDebug.Size = new System.Drawing.Size(188, 95);
-            this.listBoxDebug.TabIndex = 1;
-            this.listBoxDebug.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(119, 123);
@@ -225,6 +218,22 @@ namespace DeepGuideDemo
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // listBoxDebug
+            // 
+            this.listBoxDebug.FormattingEnabled = true;
+            this.listBoxDebug.Location = new System.Drawing.Point(6, 22);
+            this.listBoxDebug.Name = "listBoxDebug";
+            this.listBoxDebug.Size = new System.Drawing.Size(188, 95);
+            this.listBoxDebug.TabIndex = 1;
+            this.listBoxDebug.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            // 
+            // generatorToolStripMenuItem
+            // 
+            this.generatorToolStripMenuItem.Name = "generatorToolStripMenuItem";
+            this.generatorToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.generatorToolStripMenuItem.Text = "Generator";
+            this.generatorToolStripMenuItem.Click += new System.EventHandler(this.generatorToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -268,6 +277,7 @@ namespace DeepGuideDemo
         private System.Windows.Forms.ToolStripMenuItem howToPlayToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripMenuItem generatorToolStripMenuItem;
     }
 }
 

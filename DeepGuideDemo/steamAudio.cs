@@ -28,6 +28,9 @@ namespace DeepGuideDemo
         public static extern void ogCreate(float leftRight, float downUp, float frontBack);
 
         [DllImport("steam.dll")]
+        public static extern void ogCreateX(float leftRight, float downUp, float frontBack, string outputPath);
+
+        [DllImport("steam.dll")]
         public static extern void stop();
 
         [DllImport("steam.dll")]

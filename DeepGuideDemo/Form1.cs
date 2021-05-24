@@ -98,5 +98,11 @@ namespace DeepGuideDemo
         {
             MessageBox.Show("This is a demo for testing how well binaural audio can be pinpointed. This will assist in the development of an AI powered sound-navigation app." , "About");
         }
+
+        private void generatorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var f3 = new Form3();
+            f3.ShowDialog();
+        }
     }
 }
