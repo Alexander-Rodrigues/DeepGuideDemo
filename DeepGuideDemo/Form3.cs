@@ -34,6 +34,7 @@ namespace DeepGuideDemo
             float radius;
             axis a = axis.DU;
             string path;
+            string hrtf;
 
             try {
                 distance = float.Parse(textBox1.Text);
@@ -43,10 +44,11 @@ namespace DeepGuideDemo
                 if (radioButton3.Checked) a = axis.FB;
 
                 path = Path.Combine(textBox3.Text, textBox4.Text) + "\\";
+                hrtf = textBox5.Text;
 
                 bool exists = System.IO.Directory.Exists(path);
                 if (!exists) System.IO.Directory.CreateDirectory(path);
-                Generator2.create(distance, radius, a, path);
+                Generator2.create(distance, radius, a, path, hrtf);
                 label8.Text = "Done!";
 
             } catch(Exception ex) {
@@ -62,7 +64,8 @@ namespace DeepGuideDemo
             if (radioButton1.Checked) a = axis.LR;
             if (radioButton2.Checked) a = axis.DU;
             if (radioButton3.Checked) a = axis.FB;
-            textBox4.Text = string.Format("{0}_{1}_{2}", textBox1.Text, textBox2.Text, a.ToString());
+            string sofa = Path.GetFileNameWithoutExtension(textBox5.Text);
+            textBox4.Text = string.Format("{0}_{1}_{2}_{3}", textBox1.Text, textBox2.Text, a.ToString(), sofa);
         }
 
         private void Form3_FormClosing(object sender, FormClosingEventArgs e)
@@ -74,6 +77,29 @@ namespace DeepGuideDemo
         {
             if (textBox4.Text.Length > 0) Clipboard.SetText(textBox4.Text);
 
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            string p = System.IO.Path.GetDirectoryName(Application.ExecutablePath);
+            openFileDialog1.InitialDirectory = p;
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                textBox5.Text = openFileDialog1.FileName;
+                textBox5.SelectionStart = textBox5.Text.Length;
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            string p = System.IO.Path.GetDirectoryName(Application.ExecutablePath);
+            textBox5.Text = Path.Combine(p, "hrtf\\irc_1037.sofa");
+            textBox5.SelectionStart = textBox5.Text.Length;
         }
     }
 }

@@ -42,7 +42,7 @@ namespace DeepGuideDemo
                         
         }
 
-        public static void create(float distance, float radius, axis a, string output = "sounds/default/")
+        public static void create(float distance, float radius, axis a, string output = "sounds/default/", string hrtf = "")
         {
             List<Vector3> list = new List<Vector3>();
             switch ( a ){
@@ -62,7 +62,8 @@ namespace DeepGuideDemo
                 System.IO.Directory.CreateDirectory(output);
 
             Globals g = Globals.load();
-            steamAudio.settings(g.input, g.output, g.hrtf);
+            if (hrtf == "") hrtf = g.hrtf;
+            steamAudio.settings(g.input, g.output, hrtf);
             steamAudio.init();
 
             int i = 0;
