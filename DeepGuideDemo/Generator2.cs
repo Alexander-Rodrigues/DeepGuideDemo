@@ -42,7 +42,7 @@ namespace DeepGuideDemo
                         
         }
 
-        public static void create(float distance, float radius, axis a, string output = "sounds/default/", string hrtf = "")
+        public static void create(float distance, float radius, axis a, string output = "sounds/default/", string hrtf = "", string sound = "")
         {
             List<Vector3> list = new List<Vector3>();
             switch ( a ){
@@ -63,7 +63,8 @@ namespace DeepGuideDemo
 
             Globals g = Globals.load();
             if (hrtf == "") hrtf = g.hrtf;
-            steamAudio.settings(g.input, g.output, hrtf);
+            if (sound == "") sound = g.input;
+            steamAudio.settings(sound, g.output, hrtf);
             steamAudio.init();
 
             int i = 0;
